@@ -1,4 +1,4 @@
-export const CLINIC_NAME = "Thukha Imaging Clinic, Yangon"
+export const CLINIC_NAME = "D Prime Specialist Clinic and Diagnostic Centre"
 
 // The clinic mainly images tuberculosis (TB) patients, so chest views come first.
 export const EXAM_TYPES = [
@@ -9,6 +9,13 @@ export const EXAM_TYPES = [
   "Knee X-ray",
   "Hand X-ray",
 ] as const
+
+// Shown in the centre of patient QR codes and as a watermark on the printed card.
+export const QR_LOGO = "/brand/moh-logo.jpg"
+
+// Share of the QR code's width the logo (with its white ring) may cover. Keep it
+// small: error-correction level "H" can only recover about 30% of the code.
+export const QR_LOGO_RATIO = 0.28
 
 export const RADIOLOGISTS = [
   "Dr. Khin Myat Noe",

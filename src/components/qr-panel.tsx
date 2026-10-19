@@ -24,7 +24,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { CLINIC_NAME } from "@/lib/constants"
+import { CLINIC_NAME, QR_LOGO, QR_LOGO_RATIO } from "@/lib/constants"
 
 type Props = {
   examId: string
@@ -51,6 +51,47 @@ export function QrPanel({ examId, patientName, examType, examDate, url, svg, png
         toast.error(result.message)
       }
     })
+  }
+
+  // Composite the logo onto the plain QR PNG so the download matches the card.
+  async function downloadPng() {
+    if (!png) return
+    try {
+      const load = (src: string) =>
+        new Promise<HTMLImageElement>((resolve, reject) => {
+          const img = new Image()
+          img.onload = () => resolve(img)
+          img.onerror = reject
+          img.src = src
+        })
+      const [qr, logo] = await Promise.all([load(png), load(QR_LOGO)])
+      const canvas = document.createElement("canvas")
+      canvas.width = qr.width
+      canvas.height = qr.height
+      const ctx = canvas.getContext("2d")
+      if (!ctx) throw new Error("Canvas is not supported")
+      ctx.drawImage(qr, 0, 0)
+      const size = canvas.width * QR_LOGO_RATIO
+      const cx = canvas.width / 2
+      const cy = canvas.height / 2
+      ctx.fillStyle = "#ffffff"
+      ctx.beginPath()
+      ctx.arc(cx, cy, size / 2, 0, Math.PI * 2)
+      ctx.fill()
+      const inner = size * 0.86
+      ctx.save()
+      ctx.beginPath()
+      ctx.arc(cx, cy, inner / 2, 0, Math.PI * 2)
+      ctx.clip()
+      ctx.drawImage(logo, cx - inner / 2, cy - inner / 2, inner, inner)
+      ctx.restore()
+      const link = document.createElement("a")
+      link.href = canvas.toDataURL("image/png")
+      link.download = `${examId}-qr.png`
+      link.click()
+    } catch {
+      toast.error("Could not create the QR image. Please try again.")
+    }
   }
 
   if (!url || !svg || !png) {
@@ -84,29 +125,43 @@ export function QrPanel({ examId, patientName, examType, examDate, url, svg, png
           <CardDescription>This card is what gets printed and handed to the patient.</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="mx-auto max-w-sm rounded-2xl border-2 border-dashed border-teal-200 p-6 text-center print:max-w-none print:border-solid print:border-slate-300">
-            <p className="text-xs font-semibold tracking-widest text-teal-700 uppercase">{CLINIC_NAME}</p>
-            <p className="mt-1 text-lg font-semibold">Your X-ray result</p>
-            <p className="text-sm text-muted-foreground">Scan with your phone camera to view your report</p>
-            <div
-              className="mx-auto my-5 w-56 [&>svg]:h-auto [&>svg]:w-full"
-              role="img"
-              aria-label={`QR code linking to the result for ${examId}`}
-              dangerouslySetInnerHTML={{ __html: svg }}
+          <div className="relative mx-auto max-w-sm overflow-hidden rounded-2xl border-2 border-dashed border-teal-200 bg-white p-6 text-center print:max-w-none print:border-solid print:border-slate-300">
+            {/* Faint watermark behind the card; the QR itself sits on solid white. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={QR_LOGO}
+              alt=""
+              aria-hidden
+              className="pointer-events-none absolute top-1/2 left-1/2 w-[85%] max-w-none -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.07] print:opacity-[0.07]"
             />
-            <dl className="grid grid-cols-2 gap-x-3 gap-y-1 text-left text-sm">
-              <dt className="text-muted-foreground">Patient</dt>
-              <dd className="font-medium">{patientName}</dd>
-              <dt className="text-muted-foreground">Exam ID</dt>
-              <dd className="font-mono font-medium">{examId}</dd>
-              <dt className="text-muted-foreground">Examination</dt>
-              <dd className="font-medium">{examType}</dd>
-              <dt className="text-muted-foreground">Date</dt>
-              <dd className="font-medium">{examDate}</dd>
-            </dl>
-            <p className="mt-4 text-[11px] leading-snug text-muted-foreground">
-              Keep this card private. Anyone with this code can view the result.
-            </p>
+            <div className="relative">
+              <p className="text-xs font-semibold tracking-widest text-teal-700 uppercase">{CLINIC_NAME}</p>
+              <p className="mt-1 text-lg font-semibold">Your X-ray result</p>
+              <p className="text-sm text-muted-foreground">Scan with your phone camera to view your report</p>
+              <div className="relative mx-auto my-5 w-56 bg-white" role="img" aria-label={`QR code linking to the result for ${examId}`}>
+                <div className="[&>svg]:h-auto [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: svg }} />
+                <span
+                  className="absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white"
+                  style={{ width: `${QR_LOGO_RATIO * 100}%`, height: `${QR_LOGO_RATIO * 100}%` }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={QR_LOGO} alt="" className="size-[86%] rounded-full object-cover" />
+                </span>
+              </div>
+              <dl className="grid grid-cols-2 gap-x-3 gap-y-1 text-left text-sm">
+                <dt className="text-muted-foreground">Patient</dt>
+                <dd className="font-medium">{patientName}</dd>
+                <dt className="text-muted-foreground">Exam ID</dt>
+                <dd className="font-mono font-medium">{examId}</dd>
+                <dt className="text-muted-foreground">Examination</dt>
+                <dd className="font-medium">{examType}</dd>
+                <dt className="text-muted-foreground">Date</dt>
+                <dd className="font-medium">{examDate}</dd>
+              </dl>
+              <p className="mt-4 text-[11px] leading-snug text-muted-foreground">
+                Keep this card private. Anyone with this code can view the result.
+              </p>
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -134,10 +189,10 @@ export function QrPanel({ examId, patientName, examType, examDate, url, svg, png
               <PrinterIcon />
               Print QR card
             </Button>
-            <a href={png} download={`${examId}-qr.png`} className={buttonVariants({ variant: "outline" })}>
+            <Button variant="outline" onClick={downloadPng}>
               <DownloadIcon />
               Download PNG
-            </a>
+            </Button>
             <a href={url} target="_blank" rel="noreferrer" className={buttonVariants({ variant: "outline" })}>
               <ExternalLinkIcon />
               Open patient page

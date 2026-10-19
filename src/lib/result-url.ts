@@ -11,10 +11,11 @@ export async function resultUrl(token: string) {
   return `${proto}://${host}/result/${token}`
 }
 
+// Level "H" tolerates ~30% damage, which leaves room for the logo in the centre.
 export async function qrImages(url: string) {
   const [svg, png] = await Promise.all([
-    QRCode.toString(url, { type: "svg", margin: 1, errorCorrectionLevel: "M", color: { dark: "#0f172a" } }),
-    QRCode.toDataURL(url, { width: 768, margin: 2, errorCorrectionLevel: "M" }),
+    QRCode.toString(url, { type: "svg", margin: 1, errorCorrectionLevel: "H", color: { dark: "#0f172a" } }),
+    QRCode.toDataURL(url, { width: 768, margin: 2, errorCorrectionLevel: "H", color: { dark: "#0f172a" } }),
   ])
   return { svg, png }
 }

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "X-Ray Portal · Thukha Imaging Clinic",
+    default: "X-Ray Portal · D Prime Specialist Clinic",
     template: "%s · X-Ray Portal",
   },
   description: "Demo X-ray reporting and patient result portal (fictional data).",
