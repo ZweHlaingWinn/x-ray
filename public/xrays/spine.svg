@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 720" width="560" height="720">
+<defs>
+<radialGradient id="bg" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#2a2d31"/><stop offset="1" stop-color="#050506"/></radialGradient>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="bone" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.07 0"/></filter>
+</defs>
+<rect width="560" height="720" fill="url(#bg)"/>
+<rect x="80" y="0" width="400" height="720" fill="#6a7075" fill-opacity="0.45" filter="url(#soft)"/>
+<rect x="215" y="40" width="130" height="80" rx="14" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="238" cy="62" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M218 70 L170 78" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="322" cy="62" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M342 70 L390 78" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M280 90 L280 140" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.5" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<rect x="215" y="148" width="130" height="80" rx="14" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="238" cy="170" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M218 178 L164 186" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="322" cy="170" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M342 178 L396 186" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M280 198 L280 248" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.5" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<rect x="215" y="256" width="130" height="80" rx="14" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="238" cy="278" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M218 286 L158 294" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="322" cy="278" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M342 286 L402 294" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M280 306 L280 356" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.5" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<rect x="215" y="364" width="130" height="80" rx="14" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="238" cy="386" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M218 394 L152 402" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="322" cy="386" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M342 394 L408 402" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M280 414 L280 464" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.5" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<rect x="215" y="472" width="130" height="80" rx="14" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="238" cy="494" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M218 502 L146 510" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="322" cy="494" rx="13" ry="17" fill="none" stroke="#f2f3f4" stroke-width="4" stroke-opacity="0.75" filter="url(#bone)"/>
+<path d="M342 502 L414 510" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M280 522 L280 572" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.5" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M205 590 C230 580 330 580 355 590 L330 720 L230 720Z" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<path d="M200 600 C140 560 50 560 20 620 L40 720 L190 720Z" fill="#d9dcdf" fill-opacity="0.55" filter="url(#bone)"/>
+<path d="M360 600 C420 560 510 560 540 620 L520 720 L370 720Z" fill="#d9dcdf" fill-opacity="0.55" filter="url(#bone)"/>
+<rect width="560" height="720" filter="url(#grain)"/>
+<text x="24" y="44" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#e8e8e8">L</text>
+<text x="544" y="704" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#9a9a9a">DEMO IMAGE · NOT FOR DIAGNOSIS</text>
+</svg>

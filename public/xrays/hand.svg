@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 720" width="560" height="720">
+<defs>
+<radialGradient id="bg" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#2a2d31"/><stop offset="1" stop-color="#050506"/></radialGradient>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="bone" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.07 0"/></filter>
+</defs>
+<rect width="560" height="720" fill="url(#bg)"/>
+<path d="M150 720 L170 520 C110 460 70 330 95 300 C120 280 150 330 175 380 L185 170 C190 140 225 140 228 170 L240 330 L255 120 C260 90 295 90 298 120 L305 330 L325 140 C330 110 365 112 365 145 L360 345 L395 210 C405 180 440 188 432 220 L405 420 C395 480 390 520 380 720Z" fill="#7a8085" fill-opacity="0.5" filter="url(#soft)"/>
+<path d="M225 720 L232 560" stroke-width="44" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M320 720 L318 560" stroke-width="52" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="235" cy="535" rx="24" ry="20" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="280" cy="530" rx="24" ry="22" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="325" cy="532" rx="26" ry="22" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="360" cy="540" rx="20" ry="20" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="240" cy="495" rx="22" ry="18" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="280" cy="490" rx="22" ry="18" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="318" cy="490" rx="22" ry="18" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<ellipse cx="352" cy="495" rx="18" ry="18" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<line x1="230" y1="470" x2="152" y2="425" stroke-width="20" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="147" y1="422" x2="97" y2="398" stroke-width="17" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="92" y1="395" x2="55" y2="380" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="255" y1="470" x2="239" y2="341" stroke-width="20" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="238" y1="335" x2="225" y2="266" stroke-width="17" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="224" y1="260" x2="212" y2="217" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="211" y1="211" x2="200" y2="181" stroke-width="11" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="290" y1="468" x2="288" y2="328" stroke-width="20" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="287" y1="322" x2="281" y2="244" stroke-width="17" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="280" y1="238" x2="272" y2="189" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="271" y1="183" x2="264" y2="150" stroke-width="11" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="325" y1="470" x2="336" y2="340" stroke-width="20" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="337" y1="335" x2="347" y2="263" stroke-width="17" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="348" y1="257" x2="356" y2="212" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="358" y1="206" x2="365" y2="175" stroke-width="11" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="352" y1="478" x2="380" y2="366" stroke-width="20" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="381" y1="361" x2="398" y2="305" stroke-width="17" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="400" y1="299" x2="413" y2="264" stroke-width="14" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<line x1="415" y1="258" x2="426" y2="232" stroke-width="11" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<rect width="560" height="720" filter="url(#grain)"/>
+<text x="24" y="44" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#e8e8e8">L</text>
+<text x="544" y="704" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#9a9a9a">DEMO IMAGE · NOT FOR DIAGNOSIS</text>
+</svg>

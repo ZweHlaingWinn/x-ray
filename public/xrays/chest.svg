@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" width="600" height="720">
+<defs>
+<radialGradient id="bg" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#2a2d31"/><stop offset="1" stop-color="#050506"/></radialGradient>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="bone" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.07 0"/></filter>
+</defs>
+<rect width="600" height="720" fill="url(#bg)"/>
+<path d="M70 720 C60 520 70 300 110 190 C150 120 230 110 300 110 C370 110 450 120 490 190 C530 300 540 520 530 720Z" fill="#6d7378" fill-opacity="0.55" filter="url(#soft)"/>
+<path d="M150 230 C120 330 110 470 125 560 C190 600 250 590 280 560 L282 230 C250 190 190 190 150 230Z" fill="#0b0c0d" fill-opacity="0.75" filter="url(#soft)"/>
+<path d="M450 230 C480 330 490 470 475 560 C410 600 350 590 320 560 L318 230 C350 190 410 190 450 230Z" fill="#0b0c0d" fill-opacity="0.75" filter="url(#soft)"/>
+<path d="M262 360 C300 340 360 360 390 420 C420 480 400 560 330 575 C290 585 262 560 258 520Z" fill="#9da3a8" fill-opacity="0.55" filter="url(#soft)"/>
+<path d="M110 590 C170 540 250 545 300 580 C350 545 430 540 490 590 L520 720 L80 720Z" fill="#a8adb2" fill-opacity="0.6" filter="url(#soft)"/>
+<rect x="287" y="150" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="178" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="206" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="234" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="262" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="290" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="318" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="346" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="374" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="402" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="430" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="458" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="486" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="514" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="542" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="570" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<rect x="287" y="598" width="26" height="22" rx="5" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<path d="M282 215 C210 187 125 205 125 235 C125 265 160 285 180 293" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 215 C390 187 475 205 475 235 C475 265 440 285 420 293" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 251 C210 223 119 241 119 273 C119 303 156 321 176 329" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 251 C390 223 481 241 481 273 C481 303 444 321 424 329" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 287 C210 259 113 277 113 311 C113 341 152 357 172 365" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 287 C390 259 487 277 487 311 C487 341 448 357 428 365" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 323 C210 295 107 313 107 349 C107 379 148 393 168 401" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 323 C390 295 493 313 493 349 C493 379 452 393 432 401" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 359 C210 331 101 349 101 387 C101 417 144 429 164 437" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 359 C390 331 499 349 499 387 C499 417 456 429 436 437" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 395 C210 367 95 385 95 425 C95 455 140 465 160 473" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 395 C390 367 505 385 505 425 C505 455 460 465 440 473" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 431 C210 403 89 421 89 463 C89 493 136 501 156 509" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 431 C390 403 511 421 511 463 C511 493 464 501 444 509" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 467 C210 439 83 457 83 501 C83 531 132 537 152 545" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 467 C390 439 517 457 517 501 C517 531 468 537 448 545" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 503 C210 475 77 493 77 539 C77 569 128 573 148 581" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 503 C390 475 523 493 523 539 C523 569 472 573 452 581" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M282 539 C210 511 71 529 71 577 C71 607 124 609 144 617" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M318 539 C390 511 529 529 529 577 C529 607 476 609 456 617" stroke-width="9" stroke="#e4e6e8" stroke-opacity="0.55" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M280 190 C210 175 140 185 85 165" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="72" cy="200" rx="34" ry="40" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<path d="M65 230 L50 420" stroke-width="40" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M150 205 C130 260 95 300 80 360" stroke-width="10" stroke="#e4e6e8" stroke-opacity="0.35" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M320 190 C390 175 460 185 515 165" stroke-width="16" stroke="#e4e6e8" stroke-opacity="0.85" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<ellipse cx="528" cy="200" rx="34" ry="40" fill="#d9dcdf" fill-opacity="0.82" filter="url(#bone)"/>
+<path d="M535 230 L550 420" stroke-width="40" stroke="#e4e6e8" stroke-opacity="0.6" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<path d="M450 205 C470 260 505 300 520 360" stroke-width="10" stroke="#e4e6e8" stroke-opacity="0.35" fill="none" filter="url(#bone)" stroke-linecap="round"/>
+<rect width="600" height="720" filter="url(#grain)"/>
+<text x="24" y="44" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#e8e8e8">R</text>
+<text x="584" y="704" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#9a9a9a">DEMO IMAGE · NOT FOR DIAGNOSIS</text>
+</svg>
