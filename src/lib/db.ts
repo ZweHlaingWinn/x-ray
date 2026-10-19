@@ -1,37 +1,23 @@
 import "server-only"
 import { randomBytes, randomUUID } from "node:crypto"
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises"
-import path from "node:path"
 import { todayInClinic } from "./format"
 import { createSeedDatabase } from "./seed"
+import { storage } from "./storage"
 import type { Database, Examination } from "./types"
 
-// Demo persistence: a single JSON file, seeded on first use. Shared by every
-// browser that hits this server, so QR links also work from a phone.
-const DATA_DIR = path.join(process.cwd(), ".data")
-const DB_FILE = path.join(DATA_DIR, "db.json")
-
-let seeding: Promise<void> | null = null
-
+// Demo persistence: one JSON document (see storage.ts), seeded on first use.
+// Shared by every browser that hits this server, so QR links also work from a phone.
 async function load(): Promise<Database> {
-  try {
-    return JSON.parse(await readFile(DB_FILE, "utf8")) as Database
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error
-    // First run: write the seed once, even if several reads race here.
-    seeding ??= save(createSeedDatabase()).finally(() => {
-      seeding = null
-    })
-    await seeding
-    return load()
-  }
+  const json = await storage.read()
+  if (json) return JSON.parse(json) as Database
+  await storage.writeIfEmpty(JSON.stringify(createSeedDatabase()))
+  const seeded = await storage.read()
+  if (!seeded) throw new Error("Demo database could not be initialised.")
+  return JSON.parse(seeded) as Database
 }
 
 async function save(db: Database) {
-  await mkdir(DATA_DIR, { recursive: true })
-  const tmp = `${DB_FILE}.${randomUUID()}.tmp`
-  await writeFile(tmp, JSON.stringify(db, null, 2))
-  await rename(tmp, DB_FILE)
+  await storage.write(JSON.stringify(db))
 }
 
 // Serialize writes so concurrent server actions can't clobber each other.

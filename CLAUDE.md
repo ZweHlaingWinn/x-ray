@@ -26,7 +26,10 @@ There is no test framework configured.
 
 ## Architecture
 
-- **Data**: `src/lib/db.ts` stores everything in one JSON file, `.data/db.json` (gitignored), seeded from `src/lib/seed.ts` (10 TB-focused exams) on first read. Delete the file or use "Reset demo data" on the login page to reseed. All writes go through `mutate()`, which serializes them.
+- **Data**: `src/lib/db.ts` keeps everything in one JSON document, seeded from `src/lib/seed.ts` (10 TB-focused exams) on first read. All writes go through `mutate()`, which serializes them only within one process. Where the document lives is decided in `src/lib/storage.ts`:
+  - **Upstash Redis** (REST API via `fetch`, no SDK) when `KV_REST_API_URL`/`KV_REST_API_TOKEN` or `UPSTASH_REDIS_REST_URL`/`UPSTASH_REDIS_REST_TOKEN` are set. Required for a working Vercel deploy.
+  - Otherwise a **local file**: `.data/db.json` (gitignored). On Vercel without Redis it falls back to `/tmp`, which loads but resets and differs between instances; the project folder there is read-only.
+  - To reseed, use "Reset demo data" on the login page, or delete `.data/db.json`.
 - **Mutations**: all in `src/app/actions.ts` (server actions). Each one re-checks the role with `authorize()` and enforces the business rules itself; UI disabling is only cosmetic. They end with `revalidatePath("/", "layout")`.
 - **Demo auth**: the `xray_role` cookie (`admin` | `radiologist`) set by `login()`. `src/proxy.ts` redirects staff routes without it; pages call `requireSession(...roles)` from `src/lib/session.ts`. Patients have no session; `/result/[token]` is public by token.
 - **Routes**: staff pages live in `src/app/(staff)/` (sidebar shell). `/records/*` = clinic helper (radiologists can view), `/worklist/*` = radiologist report editor, `/qr-codes` + `/records/[id]/qr` = QR release. `/patient` and `/result/[token]` are the patient-facing pages with their own styling.
